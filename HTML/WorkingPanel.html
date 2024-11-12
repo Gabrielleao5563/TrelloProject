@@ -1,0 +1,49 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM DESENVOLVIMENTO</title>
+    <link rel="stylesheet" href="../CSS/WorkingPanel.css">
+</head>
+<body>
+    <!--Conteúdo-->
+    <main>
+        <!--Menu do topo-->
+        <nav class="TopMenuBar">
+            <!--Controle do Menu Lateral-->
+            <label for="SideMenuCheckbox"><p class="TopMenuTrelloName">TRELLO</p></label>
+            <!--Opção I-->
+            <a href="Boards.html" style="text-decoration: none;"><p class="TopMenuOption">Meus Quadros</p></a>]
+            <!--Opção II-->
+            <p class="TopMenuOption">Criar Lista</p>
+            <!--Opção III-->
+            <p class="TopMenuOption">Criar Cartão</p>
+        </nav>
+        <!--Checkbox do Menu Lateral-->
+        <input type="checkbox" id="SideMenuCheckbox" style="display: none;" checked>
+        <!--Menu da Lateral-->
+        <div class="SideMenuDiv">
+            <!--Titulo do Menu Lateral-->
+            <h1 class="SideMenuTopTitle">MENU</h1>
+            <!--Opções-->
+            <ul class="SideMenuUnorderedList">
+                <!--Opção I-->
+                <li><a href="Boards.html" style="text-decoration: none;">
+                    <!--Div Flex-->
+                    <div class="SideMenuOptionContentHolder">
+                        <!--Icone-->
+                        <div class="SideMenuOptionContentHolderImage">
+                            <img style="width: 80%;" src="../ICONS/MyBoardsIcon.png" alt="IconeMeusQuadros">
+                        </div>
+                        <!--Texto-->
+                        <div class="SideMenuOptionContentHolderText">
+                            <p class="SideMenuOption">Meus Quadros</p>
+                        </div>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+    </main>
+</body>
+<script src="../JS/WorkingPanel.js"></script>
+</html>
