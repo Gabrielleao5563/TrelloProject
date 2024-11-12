@@ -13,9 +13,9 @@
             <!--Controle do Menu Lateral-->
             <label for="SideMenuCheckbox"><p class="TopMenuTrelloName">TRELLO</p></label>
             <!--Opção I-->
-            <a href="Boards.html" style="text-decoration: none;"><p class="TopMenuOption">Meus Quadros</p></a>]
+            <a href="Boards.html" style="text-decoration: none;"><p class="TopMenuOption">Meus Quadros</p></a>
             <!--Opção II-->
-            <p class="TopMenuOption">Criar Lista</p>
+            <p class="TopMenuOption" onclick="CreateList()">Criar Lista</p>
             <!--Opção III-->
             <p class="TopMenuOption">Criar Cartão</p>
         </nav>
@@ -25,7 +25,7 @@
         <div class="SideMenuDiv">
             <!--Titulo do Menu Lateral-->
             <h1 class="SideMenuTopTitle">MENU</h1>
-            <!--Opções-->
+            <!--Seção 1-->
             <ul class="SideMenuUnorderedList">
                 <!--Opção I-->
                 <li><a href="Boards.html" style="text-decoration: none;">
@@ -42,6 +42,85 @@
                     </div>
                 </a></li>
             </ul>
+            <!--Seção 2-->
+            <p class="SideMenuSection2PresentingText">Seus Quadros</p>
+            <ul class="SideMenuUnorderedList">
+                <li>
+                    <div class="SideMenuOptionContentHolder">
+                        <!--Icone-->
+                        <div class="SideMenuOptionContentHolderImage">
+                            <img style="width: 80%;" src="../ICONS/MyBoardsIcon.png" alt="IconeQuadroTeste">
+                        </div>
+                        <!--Texto-->
+                        <div class="SideMenuOptionContentHolderText">
+                            <p class="SideMenuOption">Quadro Teste</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--Menu do Quadro-->
+        <div class="BoardRelatedMenuDiv">
+            <!--Opções do Menu-->
+            <ul>
+                <li><p class="RelatedMenuBoardName">NOME DO QUADRO</p></li>
+            </ul>
+        </div>
+        <!--Div principal com as listas-->
+        <div class="MainDivListsHolder">
+
+            <!--Lista-->
+            <div draggable="true" class="List">
+                <!--Nome da Lista-->
+                <p class="ListNameText">Nome da Lista</p>
+
+                <!--Cartão-->
+                <div class="Card" draggable="true">
+
+                    <!--Etiqueta-->
+                    <div class="Label orange" onclick="ChangeListPresentingMode()">
+                        <p class="LabelText">Etiqueta</p>
+                    </div>
+
+                    <!--Nome do Cartão-->
+                    <p class="CardName">Nome do Cartão</p>
+
+                </div>
+
+            </div>
+
+            <!--Lista-->
+            <div draggable="true" class="List">
+                <!--Nome da Lista-->
+                <p class="ListNameText">Nome da Lista</p>
+
+                <!--Cartão-->
+                <div class="Card" draggable="true">
+
+                    <!--Etiqueta-->
+                    <div class="Label orange" onclick="ChangeListPresentingMode()">
+                        <p class="LabelText">Etiqueta</p>
+                    </div>
+
+                    <!--Nome do Cartão-->
+                    <p class="CardName">Nome do Cartão</p>
+
+                </div>
+
+                <!--Cartão-->
+                <div class="Card" draggable="true">
+
+                    <!--Etiqueta-->
+                    <div class="Label orange" onclick="ChangeListPresentingMode()">
+                        <p class="LabelText">Etiqueta</p>
+                    </div>
+
+                    <!--Nome do Cartão-->
+                    <p class="CardName">Nome do Cartão</p>
+
+                </div>
+
+            </div>
         </div>
     </main>
 </body>
