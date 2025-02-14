@@ -12,6 +12,7 @@
     --Preto: #101204;
     --Cinza: #22272B;
     --CInzaClaro: #373f46;
+    --CinzaClarinho: #9EACBA;
     --CorDoTexto: white;
     --CorDoTextoHover: rgb(228, 228, 228);
     --FontePadrao: Arial;
@@ -32,6 +33,14 @@
 .showborder {
     box-sizing: border-box;
     border: solid cyan 2px;
+}
+
+/* Classes utilizadas durante o uso*/
+.Hide {
+    display: none;
+}
+.UnderDrag {
+    transform: rotate(-5deg);
 }
 
 /* Estilização básica */
@@ -212,6 +221,14 @@ main {
         justify-content: left;
     }
 
+    .ListsSeparation {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
     .List {
         background-color: var(--Preto);
         min-height: 10vh;
@@ -240,6 +257,7 @@ main {
         margin-bottom: 5%;
     }
 
+    /* Estilização dos Cartões */
     .Card {
         background-color: var(--CInzaClaro);
         position: relative;
@@ -256,6 +274,16 @@ main {
         flex-direction: row;
     }
 
+    .CardImage {
+        position: relative;
+        width: 100%;
+    }
+    .CardImage > img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
     .Label {
         min-width: 20%;
         max-width: 90%;
@@ -263,7 +291,7 @@ main {
         border-radius: 10px;
         margin-top: 3%;
         margin-left: 3%;
-        padding: 1% 3% 1% 3%;
+        padding: 2% 3% 2% 3%;
         overflow: hidden;
     }
     .Label:hover {
@@ -273,6 +301,7 @@ main {
         color: var(--CorDoTexto);
         font-weight: normal;
         font-family: var(--FontePadrao);
+        text-align: center;
     }
 
     .CardName {
@@ -284,9 +313,82 @@ main {
         margin-left: 3%;
         overflow: hidden;
     }
+
+    /* Botão após as listas para adicionar lista */
+    .AfterListsDiv {
+        margin-top: 2vh;
+        margin-left: 1vw;
+        background-color: var(--CInzaClaro);
+        padding: 1vh;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: rgba(255, 255, 255, 0.100) 2px 2px 40px;
+        transition-duration: 0.5s;
+    }
+    .AfterListsDiv:hover {
+        background-color: var(--CinzaClarinho);
+    }
+    .AfterListsDiv:hover > .BoardAddListButton > .AddListButtonText > p {
+        color: var(--Preto);
+    }
+
+    .BoardAddListButton {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 15vw;
+        max-height: 8vh;
+    }
+    .AddListButtonText {
+        width: 55%;
+    }
+    .AddListButtonIcon {
+        position: relative;
+        width: 10%;
+    }
+
+    .AddListButtonText > p {
+        color: var(--CorDoTexto);
+        font-family: var(--FontePadrao);
+        font-size: 2vh;
+        font-weight: bold;
+        text-align: center;
+        transition-duration: 0.5s;
+    }
+    .AddListButtonIcon > img {
+        width: 100%;
+    }
 }
 
 /* Adaptação para telas muito grandes */
 @media (min-width: 2160px){
 
 }
+
+/*
+
+                <!--Lista-->
+                <div class="List">
+                    <!--Nome da Lista-->
+                    <p class="ListNameText">Nome da Lista</p>
+
+                    <!--Cartão-->
+                    <div class="Card">
+                        <!--Capa-->
+                        <div class="CardImage">
+                            <img src="../IMAGE/ThumbTest.png" alt="CardImage">
+                        </div>
+                        <!--Etiqueta-->
+                        <div class="Label orange" onclick="ChangeListPresentingMode()">
+                            <p class="LabelText" id="Label1">Etiqueta</p>
+                        </div>
+                        <!--Nome do Cartão-->
+                        <p class="CardName">Nome do Cartão</p>
+                    </div>
+
+                </div>
+
+*/

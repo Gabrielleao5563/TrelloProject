@@ -5,7 +5,7 @@
     <title>EM DESENVOLVIMENTO</title>
     <link rel="stylesheet" href="../CSS/WorkingPanel.css">
 </head>
-<body>
+<body onload="LoadLists()">
     <!--Conteúdo-->
     <main>
         <!--Menu do topo-->
@@ -69,58 +69,25 @@
         <!--Div principal com as listas-->
         <div class="MainDivListsHolder">
 
-            <!--Lista-->
-            <div draggable="true" class="List">
-                <!--Nome da Lista-->
-                <p class="ListNameText">Nome da Lista</p>
+            <!--Seção que contem as Listas-->
+            <div class="ListsSeparation" id="ListsSeparation">
 
-                <!--Cartão-->
-                <div class="Card" draggable="true">
-
-                    <!--Etiqueta-->
-                    <div class="Label orange" onclick="ChangeListPresentingMode()">
-                        <p class="LabelText">Etiqueta</p>
-                    </div>
-
-                    <!--Nome do Cartão-->
-                    <p class="CardName">Nome do Cartão</p>
-
-                </div>
+                
 
             </div>
 
-            <!--Lista-->
-            <div draggable="true" class="List">
-                <!--Nome da Lista-->
-                <p class="ListNameText">Nome da Lista</p>
-
-                <!--Cartão-->
-                <div class="Card" draggable="true">
-
-                    <!--Etiqueta-->
-                    <div class="Label orange" onclick="ChangeListPresentingMode()">
-                        <p class="LabelText">Etiqueta</p>
+            <!--Seção após ás Listas-->
+            <div class="AfterListsDiv">
+                <div class="BoardAddListButton">
+                    <div class="AddListButtonText">
+                        <p>Adicionar Lista</p>
                     </div>
-
-                    <!--Nome do Cartão-->
-                    <p class="CardName">Nome do Cartão</p>
-
-                </div>
-
-                <!--Cartão-->
-                <div class="Card" draggable="true">
-
-                    <!--Etiqueta-->
-                    <div class="Label orange" onclick="ChangeListPresentingMode()">
-                        <p class="LabelText">Etiqueta</p>
+                    <div class="AddListButtonIcon">
+                        <img src="../ICONS/plus.png" alt="AddListIcon">
                     </div>
-
-                    <!--Nome do Cartão-->
-                    <p class="CardName">Nome do Cartão</p>
-
                 </div>
-
             </div>
+
         </div>
     </main>
 </body>
