@@ -2,8 +2,8 @@
 var ListPresentingMode = 1;
 
 var ListsAmount = 3;
-var CardsAmount = 0;
-var LabelsAmount = 0;
+var CardsAmount = 2;
+var LabelsAmount = 1;
 
 //Função Responsável por Carregar as listas
 function LoadLists(){
@@ -52,6 +52,11 @@ function LoadLists(){
 
         })
     })
+}
+
+//Função responsável por carregar os cartões dentro das listas
+function LoadCards(){
+
 }
 
 //Função responsável por criar uma Lista quando solicitado

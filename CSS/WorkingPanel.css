@@ -318,11 +318,11 @@ main {
     .AfterListsDiv {
         margin-top: 2vh;
         margin-left: 1vw;
-        background-color: var(--CInzaClaro);
+        background-color: rgba(255, 255, 255, 0.1);
         padding: 1vh;
         border-radius: 20px;
         cursor: pointer;
-        box-shadow: rgba(255, 255, 255, 0.100) 2px 2px 40px;
+        box-shadow: rgba(255, 255, 255, 0.1) 2px 2px 40px;
         transition-duration: 0.5s;
     }
     .AfterListsDiv:hover {
