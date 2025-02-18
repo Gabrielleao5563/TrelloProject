@@ -2,9 +2,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EM DESENVOLVIMENTO</title>
+    <title>Trello Fan-Made Copy</title>
+    <link rel="stylesheet" href="../CSS/Boards.css">
 </head>
-<body>
-    
+<body onload="checkjsonfile()">
+    <main>
+
+        <p onclick="createaboard()" class="fixedbtncreateboard">Criar um Quadro</p>
+
+        <div class="BoardsContainer showborder" id="BoardsContainer">
+
+            <a class="BoardLink" href="WorkingPanel.html">
+                <div class="BoardDiv showborder">
+                    <p class="BoardName">Nome do quadro</p>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
 </body>
+<script src="../JS/Boards.js"></script>
 </html>

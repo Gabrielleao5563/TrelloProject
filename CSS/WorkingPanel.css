@@ -1,15 +1,16 @@
-/* Reset Padrão inicial */
-@charset "UTF-8";
+@charset "UTF-8"; /* Definindo padrão de caractere utilizado */
 
+/* Zerando possíveis margens indeseijadas*/
 * {
     padding: 0px;
     margin: 0px;
     border: 0px;
 }
 
-/* Configuração da Paleta de cores */
+/* Configuração da Paleta de cores e familia de fonte */
 :root {
     --Preto: #101204;
+    --PretoComOpacidade: #10120488;
     --Cinza: #22272B;
     --CInzaClaro: #373f46;
     --CinzaClarinho: #9EACBA;
@@ -28,42 +29,99 @@
 .blue {
     background-color: blue;
 }
+.cyan {
+    background-color: cyan;
+}
+.black {
+    background-color: black;
+}
 
-/* Classes para teste e desenvolvimento */
+
+
+
+
+/* Exibe as bordas imaginarias do elemento */
 .showborder {
     box-sizing: border-box;
     border: solid cyan 2px;
 }
 
-/* Classes utilizadas durante o uso*/
+
+
+
+
+/* Torna o elemento invisível */
 .Hide {
     display: none;
 }
+
+/* Estado temporario aplicado a itens enquanto são arrastados */
 .UnderDrag {
     transform: rotate(-5deg);
 }
 
-/* Estilização básica */
+
+
+
+
+/* Animações e estilos reutilizáveis */
+.AcceptOption:hover {
+    background-color: rgba(2, 197, 2, 0.2);
+}
+.RejectOption:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.AcceptOptionText {
+    color: white;
+    font-family: var(--FontePadrao);
+    font-weight: normal;
+    text-align: center;
+}
+.RejectOptionText {
+    color: white;
+    font-family: var(--FontePadrao);
+    font-weight: normal;
+    text-align: center;
+}
+
+
+
+
+
+/* Estilo inicial do fundo */
 main {
-    background-color: #263246;
+    background-color: #192d4e;
     width: 100vw;
     height: 100vh;
 }
+
+
+
+
 
 /* Adaptação para Celulares */
 @media (max-width: 1023px){
     
 }
 
+
+
+
+
 /* Adaptação para Notebooks pequenos e Tablets*/
 @media (min-width: 1024px){
     
 }
 
+
+
+
+
 /* Adaptação para Computadores */
 @media (min-width: 1440px){
 
-    /* Estilização do Menu do Topo */
+    /* Barra preta do topo do menu */
     nav.TopMenuBar {
         position: absolute;
         top: 0;
@@ -79,6 +137,7 @@ main {
         z-index: 9;
     }
 
+    /* Nome TRELLO no menu em cima */
     p.TopMenuTrelloName {
         color: var(--CorDoTexto);
         font-family: var(--FontePadrao);
@@ -92,6 +151,8 @@ main {
     p.TopMenuTrelloName:hover {
         color: var(--CorDoTextoHover);
     }
+
+    /* Opções na barra preta do topo no menu */
     p.TopMenuOption {
         color: var(--CorDoTexto);
         font-family: Arial, Helvetica, sans-serif;
@@ -106,7 +167,11 @@ main {
         background-color: var(--Cinza);
     }
 
-    /* Estilização do Menu da Lateral*/
+
+
+
+
+    /* Menu rolante lateral */
     .SideMenuDiv {
         background-color: var(--Preto);
         position: absolute;
@@ -128,6 +193,7 @@ main {
         width: 85vw;
     }
 
+    /* Título no menu rolante lateral */
     .SideMenuTopTitle {
         margin-top: 5vh;
         color: var(--CorDoTexto);
@@ -136,11 +202,13 @@ main {
         text-align: center;
     }
 
+    /* Estilização da lista no menu lateral */
     .SideMenuUnorderedList {
         margin-top: 5vh;
         text-align: center;
     }
 
+    /* Opções presentes no menu lateral */
     .SideMenuOption {
         color: var(--CorDoTexto);
         font-family: Arial, Helvetica, sans-serif;
@@ -148,6 +216,7 @@ main {
         font-size: 2vh;
     }
 
+    /* Div que contem o texto e icone de cada opção no menu lateral */
     .SideMenuOptionContentHolder {
         display: flex;
         flex-wrap: nowrap;
@@ -161,12 +230,15 @@ main {
         background-color: var(--Cinza);
     }
 
+    /* Div que contem a imagem icone da opção no menu lateral */
     .SideMenuOptionContentHolderImage {
         width: 20%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
+    /* Div que contem o texto da opção no menu lateral */
     .SideMenuOptionContentHolderText {
         width: 80%;
         display: flex;
@@ -174,6 +246,7 @@ main {
         justify-content: center;
     }
 
+    /* Texto título da seção 2 no menu lateral */
     .SideMenuSection2PresentingText {
         color: var(--CorDoTexto);
         font-family: var(--FontePadrao);
@@ -183,7 +256,11 @@ main {
         font-size: 2vh;
     }
 
-    /* Estilização do Menu Relacionado ao Quadro */
+
+
+
+
+    /* Estilização do menu secundario relacionado ao quadro */
     .BoardRelatedMenuDiv {
         height: 5vh;
         width: 99vw;
@@ -197,7 +274,6 @@ main {
         align-items: center;
         justify-content: left;
     }
-
     .RelatedMenuBoardName {
         color: var(--CorDoTexto);
         font-size: 3vh;
@@ -206,7 +282,11 @@ main {
         margin-left: 1vw;
     }
 
-    /* Area principal com as listas */
+
+
+
+
+    /* Div que mantem todo o conteúdo principal exibido */
     .MainDivListsHolder {
         width: 99vw;
         height: 90vh;
@@ -221,6 +301,7 @@ main {
         justify-content: left;
     }
 
+    /* Div dinamica que mantem as listas existentes carregadas */
     .ListsSeparation {
         display: flex;
         align-items: flex-start;
@@ -229,6 +310,7 @@ main {
         flex-direction: row;
     }
 
+    /* Estilização padrão de uma lista carregada */
     .List {
         background-color: var(--Preto);
         min-height: 10vh;
@@ -245,7 +327,6 @@ main {
         cursor: pointer;
         padding-bottom: 2vh;
     }
-
     .ListNameText {
         color: var(--CorDoTexto);
         width: 90%;
@@ -257,7 +338,11 @@ main {
         margin-bottom: 5%;
     }
 
-    /* Estilização dos Cartões */
+
+
+
+
+    /* Estilização padrão de um cartão */
     .Card {
         background-color: var(--CInzaClaro);
         position: relative;
@@ -274,6 +359,7 @@ main {
         flex-direction: row;
     }
 
+    /* Estilização de imagens dentro de um cartão */
     .CardImage {
         position: relative;
         width: 100%;
@@ -284,6 +370,7 @@ main {
         border-top-right-radius: 20px;
     }
 
+    /* Estilização das etiquetas e seus textos dentro de um cartão */
     .Label {
         min-width: 20%;
         max-width: 90%;
@@ -304,6 +391,7 @@ main {
         text-align: center;
     }
 
+    /* Estilização do nome do cartão */
     .CardName {
         color: var(--CorDoTexto);
         font-family: var(--FontePadrao);
@@ -314,8 +402,95 @@ main {
         overflow: hidden;
     }
 
-    /* Botão após as listas para adicionar lista */
+
+
+
+
+    /* Div fixa após as listas carregadas existentes e antes do botão de adicionar lista*/
     .AfterListsDiv {
+        margin-top: 0vh;
+        margin-left: 0vw;
+        padding: 0vh;
+        transition-duration: 0.5s;
+    }
+
+    /* Janela de criação de lista */
+    .ListCreationTab {
+        background-color: var(--PretoComOpacidade);
+        min-height: 10vh;
+        width: 15vw;
+        margin-top: 2vh;
+        margin-left: 1vw;
+        border-radius: 20px;
+        position: relative;
+        display: none;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        overflow: hidden;
+        cursor: default;
+        padding-bottom: 2vh;
+        border: solid 0.2vw var(--Preto);
+    }
+    .ListCreationTabTitle {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        font-family: var(--FontePadrao);
+        color: var(--CorDoTexto);
+        font-size: 1.8vh;
+        font-weight: bold;
+        margin-top: 2vh;
+    }
+
+    /* Input presente na janela de criação da lista */
+    .ListCreationTabInputHolder {
+        width: 90%;
+        margin: auto;
+        margin-top: 2vh;
+    }
+    .ListCreationTabInputHolder > input {
+        width: 100%;
+        line-height: 3vh;
+        background-color: var(--Preto);
+        color: var(--CorDoTexto);
+        text-align: left;
+        text-indent: 1vw;
+        cursor: text;
+        border-radius: 20px;
+    }
+
+    /* Opções da criação de lista no fim da janela */
+    .ListCreationTabFlexMenu {
+        width: 90%;
+        margin: auto;
+        min-height: 4vh;
+        margin-top: 1vh;
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ListCreationTabOption {
+        width: 49%;
+        height: 4vh;
+        border-radius: 20px;
+        background-color: var(--CInzaClaro);
+        cursor: pointer;
+        transition-duration: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+
+
+    /* Div com o botao de adicionar lista ao final de todas as listas existentes */
+    .AfterListsDivBTN {
         margin-top: 2vh;
         margin-left: 1vw;
         background-color: rgba(255, 255, 255, 0.1);
@@ -325,13 +500,14 @@ main {
         box-shadow: rgba(255, 255, 255, 0.1) 2px 2px 40px;
         transition-duration: 0.5s;
     }
-    .AfterListsDiv:hover {
+    .AfterListsDivBTN:hover {
         background-color: var(--CinzaClarinho);
     }
-    .AfterListsDiv:hover > .BoardAddListButton > .AddListButtonText > p {
+    .AfterListsDivBTN:hover > .BoardAddListButton > .AddListButtonText > p {
         color: var(--Preto);
     }
 
+    /* Estilização do botão de adicionar lista ao final das listas carregadas */
     .BoardAddListButton {
         position: relative;
         display: flex;
@@ -349,7 +525,6 @@ main {
         position: relative;
         width: 10%;
     }
-
     .AddListButtonText > p {
         color: var(--CorDoTexto);
         font-family: var(--FontePadrao);
@@ -362,6 +537,10 @@ main {
         width: 100%;
     }
 }
+
+
+
+
 
 /* Adaptação para telas muito grandes */
 @media (min-width: 2160px){

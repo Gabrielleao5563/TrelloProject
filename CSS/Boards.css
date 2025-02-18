@@ -1,0 +1,110 @@
+@charset "UTF-8"; /* Definindo padrão de caractere utilizado */
+
+/* Zerando possíveis margens indeseijadas*/
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+/* Configuração da Paleta de cores e familia de fonte */
+:root {
+    --Preto: #101204;
+    --PretoComOpacidade: #10120488;
+    --Cinza: #22272B;
+    --CInzaClaro: #373f46;
+    --CinzaClarinho: #9EACBA;
+    --CorDoTexto: white;
+    --CorDoTextoHover: rgb(228, 228, 228);
+    --FontePadrao: Arial;
+}
+
+
+
+
+
+/* Exibe as bordas imaginarias do elemento */
+.showborder {
+    box-sizing: border-box;
+    border: solid cyan 2px;
+}
+
+
+
+
+
+/* Estilo do fundo */
+main {
+    background-color: var(--CInzaClaro);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* Div principal com todas as outras */
+.BoardsContainer {
+    width: 90%;
+    min-height: 20vh;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilo da caixa do quadro */
+.BoardDiv {
+    width: 20vw;
+    height: 15vh;
+    border-radius: 20px;
+    border: solid 0.2vw var(--Preto);
+    position: relative;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+/* Nome dentro da caixa do quadro */
+.BoardName {
+    color: white;
+    font-family: var(--FontePadrao);
+    font-weight: bold;
+    font-size: 1.1vw;
+    background-color: var(--PretoComOpacidade);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+
+
+
+
+/* Botão de criar novo quadro */
+.fixedbtncreateboard {
+    color: white;
+    font-weight: bold;
+    font-family: var(--FontePadrao);
+    position: absolute;
+    top: 15%;
+    border: solid 1px white;
+    padding: 1%;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+.fixedbtncreateboard:hover {
+    background-color: var(--CinzaClarinho);
+    color: black;
+}

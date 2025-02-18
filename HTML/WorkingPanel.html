@@ -5,10 +5,10 @@
     <title>EM DESENVOLVIMENTO</title>
     <link rel="stylesheet" href="../CSS/WorkingPanel.css">
 </head>
-<body onload="LoadLists()">
-    <!--Conteúdo-->
+<body onload="checkjsonfile()">
+    <!-- Conteúdo -->
     <main>
-        <!--Menu do topo-->
+        <!-- Menu do topo -->
         <nav class="TopMenuBar">
             <!--Controle do Menu Lateral-->
             <label for="SideMenuCheckbox"><p class="TopMenuTrelloName">TRELLO</p></label>
@@ -19,9 +19,9 @@
             <!--Opção III-->
             <p class="TopMenuOption">Criar Cartão</p>
         </nav>
-        <!--Checkbox do Menu Lateral-->
+        <!-- Checkbox do Menu Lateral -->
         <input type="checkbox" id="SideMenuCheckbox" style="display: none;" checked>
-        <!--Menu da Lateral-->
+        <!-- Menu da Lateral -->
         <div class="SideMenuDiv">
             <!--Titulo do Menu Lateral-->
             <h1 class="SideMenuTopTitle">MENU</h1>
@@ -44,7 +44,8 @@
             </ul>
             <!--Seção 2-->
             <p class="SideMenuSection2PresentingText">Seus Quadros</p>
-            <ul class="SideMenuUnorderedList">
+            <ul class="SideMenuUnorderedList" id="sidemenuboardsul">
+                
                 <li>
                     <div class="SideMenuOptionContentHolder">
                         <!--Icone-->
@@ -57,58 +58,71 @@
                         </div>
                     </div>
                 </li>
+
             </ul>
         </div>
-        <!--Menu do Quadro-->
+        <!-- Menu do Quadro -->
         <div class="BoardRelatedMenuDiv">
-            <!--Opções do Menu-->
+            <!-- Opções do Menu -->
             <ul>
                 <li><p class="RelatedMenuBoardName">NOME DO QUADRO</p></li>
             </ul>
         </div>
-        <!--Div principal com as listas-->
+        <!-- Div principal com as listas -->
         <div class="MainDivListsHolder">
 
-            <!--Seção que contem as Listas-->
+            <!-- Seção que contem as Listas -->
             <div class="ListsSeparation" id="ListsSeparation">
 
-                <!--Lista-->
-                <div class="List">
-                    <!--Nome da Lista-->
-                    <p class="ListNameText">Nome da Lista</p>
+                
 
-                    <!--Cartão-->
-                    <div class="Card">
-                        <!--Capa-->
-                        <div class="CardImage">
-                            <img src="../IMAGE/ThumbTest.png" alt="CardImage">
+            </div>
+
+            <!-- Seção após as listas -->
+            <div class="AfterListsDiv">
+
+                <!-- Janela de criação de lista -->
+                <div draggable="false" class="ListCreationTab" id="ListCreationTab">
+                        
+                    <p class="ListCreationTabTitle">Criar nova lista</p>
+                    <div class="ListCreationTabInputHolder">
+                        <input type="text" id="ListCreationTabInput" placeholder="Nome da lista...">
+                    </div>
+
+                    <div class="ListCreationTabFlexMenu">
+
+                        <div class="ListCreationTabOption AcceptOption">
+                            <p class="AcceptOptionText">Criar lista</p>
                         </div>
-                        <!--Etiqueta-->
-                        <div class="Label orange" onclick="ChangeListPresentingMode()">
-                            <p class="LabelText" id="Label1">Etiqueta</p>
+                        <div onclick="closetab('ListCreationTab')" class="ListCreationTabOption RejectOption">
+                            <p class="RejectOptionText">Cancelar</p>
                         </div>
-                        <!--Nome do Cartão-->
-                        <p class="CardName">Nome do Cartão</p>
+
                     </div>
 
                 </div>
 
             </div>
 
-            <!--Seção após ás Listas-->
-            <div class="AfterListsDiv">
-                <div class="BoardAddListButton">
+            <!-- Seção após as listas com o botão de adicionar lista -->
+            <div class="AfterListsDivBTN">
+
+                <div onclick="opentab('ListCreationTab', 'flex')" class="BoardAddListButton">
+
                     <div class="AddListButtonText">
                         <p>Adicionar Lista</p>
                     </div>
                     <div class="AddListButtonIcon">
                         <img src="../ICONS/plus.png" alt="AddListIcon">
                     </div>
+
                 </div>
+
             </div>
 
         </div>
+
     </main>
 </body>
-<script src="../JS/WorkingPanel.js"></script>
+<script src="../JS/ListsAndCards.js"></script>
 </html>
