@@ -5,7 +5,7 @@
     <title>EM DESENVOLVIMENTO</title>
     <link rel="stylesheet" href="../CSS/WorkingPanel.css">
 </head>
-<body onload="checkjsonfile()">
+<body>
     <!-- Conteúdo -->
     <main>
         <!-- Menu do topo -->
@@ -46,6 +46,7 @@
             <p class="SideMenuSection2PresentingText">Seus Quadros</p>
             <ul class="SideMenuUnorderedList" id="sidemenuboardsul">
                 
+                <!-- Bloco de quadro teste -->
                 <li>
                     <div class="SideMenuOptionContentHolder">
                         <!--Icone-->
@@ -91,10 +92,10 @@
 
                     <div class="ListCreationTabFlexMenu">
 
-                        <div class="ListCreationTabOption AcceptOption">
+                        <div onclick="comecarcriacaodalista()" class="ListCreationTabOption AcceptOption">
                             <p class="AcceptOptionText">Criar lista</p>
                         </div>
-                        <div onclick="closetab('ListCreationTab')" class="ListCreationTabOption RejectOption">
+                        <div onclick="fecharjanela('ListCreationTab')" class="ListCreationTabOption RejectOption">
                             <p class="RejectOptionText">Cancelar</p>
                         </div>
 
@@ -107,7 +108,7 @@
             <!-- Seção após as listas com o botão de adicionar lista -->
             <div class="AfterListsDivBTN">
 
-                <div onclick="opentab('ListCreationTab', 'flex')" class="BoardAddListButton">
+                <div onclick="abrirjanela('ListCreationTab', 'flex')" class="BoardAddListButton">
 
                     <div class="AddListButtonText">
                         <p>Adicionar Lista</p>

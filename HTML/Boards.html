@@ -5,15 +5,62 @@
     <title>Trello Fan-Made Copy</title>
     <link rel="stylesheet" href="../CSS/Boards.css">
 </head>
-<body onload="checkjsonfile()">
+<body>
     <main>
 
-        <p onclick="createaboard()" class="fixedbtncreateboard">Criar um Quadro</p>
+        <!-- Botão para criar novo quadro -->
+        <p onclick="janeladecriacaodequadro('flex')" class="fixedbtncreateboard">Criar um Quadro</p>
 
-        <div class="BoardsContainer showborder" id="BoardsContainer">
+        <!-- Janela de criação de novo quadro -->
+        <div class="BoardCreationTab" id="BoardCreationTab">
+            <div class="BoardCreationTabContentHolder">
 
+                <h1 class="BoardCreationTabText">Criação de novo quadro</h1>
+
+                <!-- Caixa de erro 1 -->
+                <div class="errorbox" id="boardcreationtaberror1">
+                    <p id="boardcreationtaberror1text" class="genericerrortext">Erro aqui</p>
+                </div>
+
+                <!-- Caixa de erro 2 -->
+                <div class="errorbox" id="boardcreationtaberror2">
+                    <p id="boardcreationtaberror2text" class="genericerrortext">Erro aqui</p>
+                </div>
+
+                <!-- Input do nome do quadro -->
+                <div class="BoardCreationTabInputBoxOne">
+                    <input id="boardcreationinput1" type="text" placeholder="Nome do quadro...">
+                </div>
+                
+                <!-- Input da cor de fundo -->
+                <div class="BoardCreationTabInputBoxTwo">
+                    <input id="boardcreationinput2" type="text" placeholder="Cor do plano de fundo...">
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="BoardCreationTabFlexBtnHolder">
+
+                    <!-- Botão para criar o quadro -->
+                    <div onclick="iniciarcriacaodoquadro()" class="BoardCreationTabFlexAccept">
+                        <p class="GenericBtnText">Criar quadro</p>
+                    </div>
+
+                    <!-- Botão para cancelar criação do quadro -->
+                    <div onclick="janeladecriacaodequadro('none')" class="BoardCreationTabFlexReject">
+                        <p class="GenericBtnText">Cancelar</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Div que exibe os quadros carregados do JSON -->
+        <div class="BoardsContainer" id="BoardsContainer">
+
+            <!-- Quadro de exemplo -->
             <a class="BoardLink" href="WorkingPanel.html">
-                <div class="BoardDiv showborder">
+                <div class="BoardDiv">
                     <p class="BoardName">Nome do quadro</p>
                 </div>
             </a>

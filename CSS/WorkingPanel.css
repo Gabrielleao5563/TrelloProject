@@ -229,6 +229,9 @@ main {
     .SideMenuOptionContentHolder:hover {
         background-color: var(--Cinza);
     }
+    .quadroselecionado {
+        background-color: var(--CInzaClaro);
+    }
 
     /* Div que contem a imagem icone da opção no menu lateral */
     .SideMenuOptionContentHolderImage {

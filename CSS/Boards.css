@@ -108,3 +108,130 @@ main {
     background-color: var(--CinzaClarinho);
     color: black;
 }
+
+
+
+
+
+/* Tela de criação de um novo quadro */
+.BoardCreationTab {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    height: 70vh;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    border-radius: 20px;
+    background-color: var(--CinzaClarinho);
+}
+
+/* Div de posição relative que mantem o conteúdo da janela fixo */
+.BoardCreationTabContentHolder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Título dentro da janela de criação de novo quadro */
+.BoardCreationTabText {
+    color: black;
+    font-family: var(--FontePadrao);
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    transform: translate(-50%, -50%);
+}
+
+/* Divs com os inputs da janela */
+.BoardCreationTabInputBoxOne {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+.BoardCreationTabInputBoxTwo {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+/* Inputs */
+.BoardCreationTabInputBoxOne > input, .BoardCreationTabInputBoxTwo > input {
+    width: 100%;
+    line-height: 4vh;
+    color: white;
+    background-color: var(--Cinza);
+    font-size: 2vh;
+    font-weight: bold;
+    text-indent: 2vw;
+    cursor: text;
+    border-radius: 20px;
+}
+
+/* Botões de ação da janela de criação de novo quadro */
+.BoardCreationTabFlexBtnHolder {
+    display: flex;
+    width: 80%;
+    height: 7%;
+    position: fixed;
+    top: 75%;
+    left: 10%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.BoardCreationTabFlexAccept, .BoardCreationTabFlexReject {
+    cursor: pointer;
+    background-color: var(--Preto);
+    padding: 2%;
+    width: 40%;
+    transition-duration: 0.3s;
+}
+
+.BoardCreationTabFlexAccept:hover {
+    background-color: green;
+}
+.BoardCreationTabFlexReject:hover {
+    background-color: red;
+}
+
+.GenericBtnText, .genericerrortext {
+    font-family: var(--FontePadrao);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* Mensagens de erro */
+#boardcreationtaberror1 {
+    background-color: red;
+    position: absolute;
+    top: 31%;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#boardcreationtaberror2 {
+    background-color: red;
+    position: absolute;
+    top: 51%;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}

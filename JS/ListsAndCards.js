@@ -1,9 +1,19 @@
-//Variáveis
-var ListPresentingMode = 1; //Salva se as etiquetas ficarao salvas abertas ou fechadas
+//O que fazer quando carregar a página
+window.onload = function(){
 
-var ListsAmount = 0; //Salva a quantidade de listas existente
-var CardsAmount = 0; //Salva a quantidade de cartoes existentes
-var LabelsAmount = 0; // Armazena a quantidade de etiquetas existente
+    //Roda a função que verifica existencia de um arquivo JSON
+    verificarjson();
+
+    //Roda a função que bloqueia uso sem quadro criado e ativo
+    bloquearusosemquadro();
+
+    //Roda a função que carrega as listas
+    carregarlistas();
+
+    //Roda a função que carrega os quadros no menu lateral
+    carregarquadrosmenulateral();
+
+}
 
 //Dados iniciais para novos acessos
 const datapadrao = {
@@ -13,7 +23,7 @@ const datapadrao = {
 }
 
 //Função que verifica se ja existe um arquivo JSON local
-function checkjsonfile(){
+function verificarjson(){
 
     //Se o arquivo nao existir
     if(!localStorage.getItem("dadosdotrello")){
@@ -30,14 +40,15 @@ function checkjsonfile(){
 let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello")); //Puxa os dados atuais do arquivo JSON e insere para ser usado no código
 console.log("Dados encontrados no arquivo JSON ao carregar: " + dadosdotrello); //Registra o que foi encontrado no arquivo JSON para o console
 
-//Assegura que o usuário não consiga acessar essa página sem ter criado um quadro
-window.onload = function(){
-
+//Detecta e expulsa usuario que entrar na página sem ter um quadro criado e ativo
+function bloquearusosemquadro(){
+    
     let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello")); //Acessa o arquivo JSON
-    let quadroatual = localStorage.getItem("currentboard"); //Procura saber se tem um quadro aberto
+    let quadroatual = localStorage.getItem("quadroatual"); //Procura saber se tem um quadro aberto
 
     //Verifica se existe algum quadro criado
-    let existequadro = dadosdotrello && dadosdotrello.quadros && dadosdotrello.quadros.lenght > 0;
+    let existequadro = dadosdotrello && dadosdotrello.quadros && dadosdotrello.quadros.length > 0;
+
 
     //Caso não exista, redireciona o usuario
     if(!existequadro || !quadroatual){
@@ -51,7 +62,7 @@ window.onload = function(){
 
 
 //Funcao responsável por criar uma nova lista
-function createalist(boardid, name, position){
+function criarumalista(boardid, name, position){
 
     //Pega todos os dados já salvos no cache do site sobre as listas e cartoes
     let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello"));
@@ -71,10 +82,17 @@ function createalist(boardid, name, position){
     //Passa os dados para o JSON permanente
     localStorage.setItem("dadosdotrello", JSON.stringify(dadosdotrello));
     console.log("Lista adicionada: " + novalista);
+
+    //Recarrega as listas existentes
+    carregarlistas();
 }
 
+
+
+
+
 //Define qual quadro esta atualmente em uso
-function setcurrentboard(boardid){
+function definirquadroatual(boardid){
 
     //Armazena a informação no arquivo JSON
     localStorage.setItem("currentboard", boardid);
@@ -82,29 +100,29 @@ function setcurrentboard(boardid){
 }
 
 //Verifica qual o quadro atualmente em uso
-function getcurrentboard(){
+function consultarquadroatual(){
 
     //Retorna o resultado como um numero inteiro
-    return parseInt(localStorage.getItem("currentboard")) || null;
+    return parseInt(localStorage.getItem("quadroatual")) || null;
 
 }
 
 //Recarrega o conteúdo ao trocar de quadro
-function switchboard(boardid){
+function trocarquadro(boardid){
 
     //Salva o novo quadro como o atualmente em uso
-    setcurrentboard(boardid);
+    definirquadroatual(boardid);
 
     //Recarrega as listas para o novo quadro
-    loadthelists();
+    carregarlistas();
 
 }
 
 //Funcao responsavel por carregar todas as listas existentes
-function loadthelists(){
+function carregarlistas(){
 
     let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello")); //Coleta as informações das listas
-    let quadroemuso = getcurrentboard(); //Acessa a informação de qual quadro está em uso
+    let quadroemuso = consultarquadroatual(); //Acessa a informação de qual quadro está em uso
 
     //Caso não exista quadro aberto
     if(!quadroemuso) {
@@ -125,7 +143,7 @@ function loadthelists(){
         //Cria o bloco de conteúdo personalizando as informações com base no arquivo JSON
         conteudotemporario = `
             <!--Lista "${lista.name}"-->
-            <div draggable="True" Class="List" id="List${lista.id}">
+            <div Class="List" id="List${lista.id}">
 
                 <p Class="ListNameText" id="NomeLista${lista.id}">${lista.name}</p>
 
@@ -139,13 +157,23 @@ function loadthelists(){
 
 }
 
+function renomearlista(idlista, novonome){
+
+}
+
+function renomearcartao(idcartao, novonome){
+
+}
 
 
 
-//ABERTURA E FECHAMENTO DE JANELAS, ASSIM COMO APRESENTAÇÃO DE PROMPTS AO USUARIO (INTERFACE)
+
+
+
+//----- INTERFACE ----- INTERFACE ----- INTERFACE ----- INTERFACE ----- INTERFACE ----- INTERFACE ----- INTERFACE
 
 //Abre uma janela especificada
-function opentab(tabid, how){
+function abrirjanela(tabid, how){
 
     var janela = document.getElementById(tabid); //Acessa o elemento
     janela.style.display=how; //Exibe o elemento
@@ -153,38 +181,118 @@ function opentab(tabid, how){
 }
 
 //Fecha uma janela especificada
-function closetab(tabid){
+function fecharjanela(tabid){
 
     var janela = document.getElementById(tabid); //Acessa o elemento
     janela.style.display="none"; //Oculta o elemento
 
 }
 
-function loadsidemenuboards(){
-    
+//Carrega os quadros na lista do menu lateral
+function carregarquadrosmenulateral(){
+
+    //Acessa a div que contem os quadros
+    var div = document.getElementById("sidemenuboardsul");
+
+    //variavel que segura conteúdo temporariamente durante execução
+    var conteudotemporario="";
+
+    //Limpa o conteúdo inicial
+    div.innerHTML="";
+
+    //Acessa o JSON e pega os dados
+    let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello"));
+
+    //Executa a tudo a partir daqui uma vez para cada quadro existente
+    dadosdotrello.quadros.forEach(quadro => {
+
+        //Define o conteúdo
+        conteudotemporario =`
+            <!-- Bloco do quadro "${quadro.name}" -->
+            <ul onclick="trocarquadro(${quadro.id})">
+                <div class="SideMenuOptionContentHolder ${verificarselecionado()}">
+                    <!-- Icone do quadro "${quadro.name}" -->
+                    <div class="SideMenuOptionContentHolderImage" style="background-color: ${quadro.background}">
+                        <img style="width: 80%;" src="../ICONS/MyBoardsIcon.png" alt="Icone do quadro '${quadro.name}'">
+                    </div>
+                    <!-- Nome do quadro "${quadro.name}" -->
+                    <div class="SideMenuOptionContentHolderText">
+                        <p class="SideMenuOption">${quadro.name}</p>
+                    </div>
+                </div>
+            </ul>
+        `
+
+        function verificarselecionado(){
+
+            if(consultarquadroatual() === quadro.id){
+
+                return "quadroselecionado";
+            
+            }else{
+                
+                return "";
+
+            }
+
+        }
+
+        console.log(conteudotemporario);
+
+        //Adiciona o conteúdo na div
+        div.innerHTML=div.innerHTML+conteudotemporario;
+
+    })
+
+}
+
+//Prepara a interface para renomear uma lista
+function iniciartrocadenomelista(idlista, idtexto, idinput){
+
+    //Pega tag P de texto da lista
+    var textonome = document.getElementById(idtexto);
+
+    //Pega input de nome da lista
+    var inputnome = document.getElementById(idinput);
+
 }
 
 
 
 
-//FUNCIONAMENTO APENAS VISUAL E COSMÉTICO
 
-//Função que Faz o Texto Aparecer ou Desapareçer quando o usuário clica em uma etiqueta
-function changelistpresentingmode(){
+//Trata os dados e prossegue com a criação da lista
+function comecarcriacaodalista(){
 
-    switch(ListPresentingMode){
+    //Consulta qual o quadro ativo
+    var quadroid = consultarquadroatual();
 
-        case 1:
-            ListPresentingMode = 0;
-            decision = "none";
-            break;
-        default:
-            ListPresentingMode = 1;
-            decision = "initial";
-            break;
+    //Pega o nome digitado na caixa de texto
+    var listanome = document.getElementById("ListCreationTabInput").value;
+
+    //Verifica se foi digitado algo no campo do nome
+    if(listanome === ""){
+
+        //Se nada foi digitado, auto nomear
+        listanome = "Lista sem nome";
+
     }
 
-    for(var i=LabelsAmount; i>0; i--){
-        document.getElementById(String("Label" + i)).style.display=decision;
+    //Caso não tenha quadro ativo
+    if(!quadroid){
+
+        //Encerrar criação da lista
+        return;
+
     }
+
+    //Filtra apenas as listas referentes a esse quadro
+    let listasdessequadro = dadosdotrello.listas.filter(lista => lista.boardid === quadroid);
+
+    //Decide a posição ideal para a lista
+    var posicao = listasdessequadro.length + 1;
+
+    //Chama a função para salvar
+    criarumalista(quadroid, listanome, posicao);
+
 }
