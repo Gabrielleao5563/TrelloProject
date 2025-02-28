@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../CSS/WorkingPanel.css">
 </head>
 <body>
+
+    <!-- Menu flutuante das listas -->
+    <div id="floatinglistmenudiv" class="ListMenu"></div>
+
     <!-- Conteúdo -->
     <main>
         <!-- Menu do topo -->
@@ -75,7 +79,18 @@
             <!-- Seção que contem as Listas -->
             <div class="ListsSeparation" id="ListsSeparation">
 
-                
+                <!-- Lista de exemplo -->
+                <div class="List">
+
+                    <!-- Nome da lista -->
+                    <p class="ListNameText" id="NomeLista1">Lista de exemplo</p>
+
+                    <!-- Botão da lista -->
+                    <div onclick="abrirmenuflutuantedalista('1', event)" class="FixedListTreePointBTN">
+                        <img src="../ICONS/3points.png" alt="Opções da lista">
+                    </div>
+
+                </div>
 
             </div>
 
@@ -108,7 +123,7 @@
             <!-- Seção após as listas com o botão de adicionar lista -->
             <div class="AfterListsDivBTN">
 
-                <div onclick="abrirjanela('ListCreationTab', 'flex')" class="BoardAddListButton">
+                <div onclick="abrirjanela('ListCreationTab', 'flex'); definirfoco('ListCreationTabInput')" class="BoardAddListButton">
 
                     <div class="AddListButtonText">
                         <p>Adicionar Lista</p>

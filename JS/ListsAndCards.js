@@ -95,7 +95,7 @@ function criarumalista(boardid, name, position){
 function definirquadroatual(boardid){
 
     //Armazena a informação no arquivo JSON
-    localStorage.setItem("currentboard", boardid);
+    localStorage.setItem("quadroatual", boardid);
 
 }
 
@@ -113,8 +113,9 @@ function trocarquadro(boardid){
     //Salva o novo quadro como o atualmente em uso
     definirquadroatual(boardid);
 
-    //Recarrega as listas para o novo quadro
     carregarlistas();
+
+    carregarquadrosmenulateral();
 
 }
 
@@ -137,6 +138,8 @@ function carregarlistas(){
     var divdaslistas = document.getElementById("ListsSeparation"); //Obtem acesso total a div que contem as listas
     var conteudotemporario = ""; //Variavel que vai segurar conteúdos temporariamente para ajudar no manuseio dos dados
 
+    divdaslistas.innerHTML=""; //Limpa o conteúdo atual antes de carregar
+
     //Executa uma vez para cada uma das listas
     listasordenadas.forEach( lista => {
         
@@ -146,6 +149,11 @@ function carregarlistas(){
             <div Class="List" id="List${lista.id}">
 
                 <p Class="ListNameText" id="NomeLista${lista.id}">${lista.name}</p>
+
+                <!-- Botão da lista -->
+                <div onclick="abrirmenuflutuantedalista(${lista.id}, event)" class="FixedListTreePointBTN">
+                    <img src="../ICONS/3points.png" alt="Opções da lista">
+                </div>
 
             </div>
         `
@@ -237,8 +245,6 @@ function carregarquadrosmenulateral(){
 
         }
 
-        console.log(conteudotemporario);
-
         //Adiciona o conteúdo na div
         div.innerHTML=div.innerHTML+conteudotemporario;
 
@@ -254,6 +260,62 @@ function iniciartrocadenomelista(idlista, idtexto, idinput){
 
     //Pega input de nome da lista
     var inputnome = document.getElementById(idinput);
+
+}
+
+//Abre o menu flutuante da lista
+function abrirmenuflutuantedalista(listaid, event) {
+    //Previne mau uso do botão
+    event.preventDefault();
+
+    //Acessa a div do menu
+    const divdomenu = document.getElementById("floatinglistmenudiv");
+
+    // Se clicando no mesmo botao de novo, mantem aberto
+    if (divdomenu.style.display === "block") {
+        fecharmenulista(); // Close first
+    }
+
+    // Gera as opções do menu dinamicamente
+    divdomenu.innerHTML = `
+        <ul>
+            <li onclick="iniciartrocadenomelista(${listaid}, 'ListaNome${listaid}', 'ListaInput${listaid}'); fecharmenulista()">Renomear lista</li>
+            <li onclick="fecharmenulista()">Excluir lista</li>
+        </ul>
+    `;
+
+    // Pega a posição do cursor
+    const x = event.pageX;
+    const y = event.pageY;
+
+    // Posiciona o menu
+    divdomenu.style.left = `${x}px`;
+    divdomenu.style.top = `${y}px`;
+    divdomenu.style.display = "block";
+
+    // Apenas fecha o menu ao clicar fora
+    setTimeout(() => {
+        document.addEventListener("click", fecharmenulista);
+    }, 100);
+}
+function fecharmenulista(event) {
+    const divdomenu = document.getElementById("floatinglistmenudiv");
+
+    // Não fazer nada se o clique for dentro do menu ou do botão
+    if (event && (divdomenu.contains(event.target) || event.target.closest(".FixedListTreePointBTN"))) {
+        return;
+    }
+
+    //Oculta o menu e reseta a função
+    divdomenu.style.display = "none";
+    document.removeEventListener("click", fecharmenulista);
+}
+
+//Define o foco em um elemento
+function definirfoco(id) {
+
+    //Pega o acesso ao elemento e define o foco
+    var elemento = document.getElementById(id).focus();
 
 }
 
@@ -294,5 +356,13 @@ function comecarcriacaodalista(){
 
     //Chama a função para salvar
     criarumalista(quadroid, listanome, posicao);
+
+    //Pega acesso ao input
+    var nomeinput = document.getElementById("ListCreationTabInput");
+
+    //Limpa o campo de digitação após criar
+    nomeinput.value="";
+
+    fecharjanela('ListCreationTab');
 
 }

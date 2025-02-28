@@ -261,7 +261,7 @@ main {
 
 
 
-
+    /* ------------------------------------------------------------------------------------------------------ */
 
     /* Estilização do menu secundario relacionado ao quadro */
     .BoardRelatedMenuDiv {
@@ -285,9 +285,7 @@ main {
         margin-left: 1vw;
     }
 
-
-
-
+    /* ------------------------------------------------------------------------------------------------------ */
 
     /* Div que mantem todo o conteúdo principal exibido */
     .MainDivListsHolder {
@@ -313,6 +311,8 @@ main {
         flex-direction: row;
     }
 
+    /* ------------------------------------------------------------------------------------------------------ */
+
     /* Estilização padrão de uma lista carregada */
     .List {
         background-color: var(--Preto);
@@ -332,18 +332,72 @@ main {
     }
     .ListNameText {
         color: var(--CorDoTexto);
-        width: 90%;
+        width: 70%;
         margin-left: 5%;
         font-family: var(--FontePadrao);
         font-weight: bold;
         font-size: 2vh;
         margin-top: 5%;
         margin-bottom: 5%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 70%;
+    }
+
+    /* Botão de 3 pontos da lista */
+    .FixedListTreePointBTN {
+        position: absolute;
+        right: 5%;
+        top: 10%;
+        width: 10%;
+        border-radius: 50%;
+        background-color: var(--Cinza);
+        transition-duration: 0.3s;
+    }
+    .FixedListTreePointBTN:hover {
+        background-color: var(--CinzaClarinho);
+    }
+    .FixedListTreePointBTN > img {
+        width: 100%;
+    }
+
+    /* ------------------------------------------------------------------------------------------------------ */
+
+    /* Menu flutuante das listas */
+    .ListMenu {
+        position: absolute;
+        background-color: var(--Cinza);
+        border: solid gray 1px;
+        border-radius: 10px;
+        padding: 5px;
+        display: none;
+        left: 50%;
+        top: 50%;
+        min-width: 160px;
+        z-index: 1000;
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 30px;
+    }
+    .ListMenu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Opções da lista */
+    .ListMenu li {
+        padding: 8px 12px;
+        cursor: pointer;
+        color: white;
+        font-family: var(--FontePadrao);
+        transition-duration: 0.3s;
+    }
+    .ListMenu li:hover {
+        background-color: var(--CInzaClaro);
     }
 
 
-
-
+    /* ------------------------------------------------------------------------------------------------------ */
 
     /* Estilização padrão de um cartão */
     .Card {
@@ -405,9 +459,7 @@ main {
         overflow: hidden;
     }
 
-
-
-
+    /* ------------------------------------------------------------------------------------------------------ */
 
     /* Div fixa após as listas carregadas existentes e antes do botão de adicionar lista*/
     .AfterListsDiv {
@@ -416,6 +468,8 @@ main {
         padding: 0vh;
         transition-duration: 0.5s;
     }
+
+    /* ------------------------------------------------------------------------------------------------------ */
 
     /* Janela de criação de lista */
     .ListCreationTab {
@@ -488,9 +542,7 @@ main {
         justify-content: center;
     }
 
-
-
-
+    /* ------------------------------------------------------------------------------------------------------ */
 
     /* Div com o botao de adicionar lista ao final de todas as listas existentes */
     .AfterListsDivBTN {
