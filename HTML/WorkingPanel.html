@@ -3,7 +3,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EM DESENVOLVIMENTO</title>
-    <link rel="stylesheet" href="../CSS/WorkingPanel.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/resetPadrao.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/variaveis.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/classesGerais.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/botoesGenericos.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/divPrincipal.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/menuSuperior.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/menuLateral.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/menuSobreQuadro.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/secaoDasListas.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/lista.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/menuDasListas.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/cartao.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/secaoAposAsListas.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/interfaceCriacaoDeLista.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/botaoAddListaInterno.css">
+    <link rel="stylesheet" href="../CSS/WorkingPanel/inputRenomearListaExterno.css">
 </head>
 <body>
 
@@ -83,7 +98,10 @@
                 <div class="List">
 
                     <!-- Nome da lista -->
-                    <p class="ListNameText" id="NomeLista1">Lista de exemplo</p>
+                    <p class="ListNameText" id="NomeLista1" onclick="renomearLista('NomeLista1')">Lista de exemplo</p>
+
+                    <!--Input de Renomeação-->
+                    <input class="ListExternalRenamingInput" type="text" id="inputNomeLista1">
 
                     <!-- Botão da lista -->
                     <div onclick="abrirmenuflutuantedalista('1', event)" class="FixedListTreePointBTN">
@@ -139,6 +157,15 @@
         </div>
 
     </main>
+    <script src="../JS/WorkingPanel/verificarJson.js"></script>
+    <script src="../JS/WorkingPanel/aoCarregar.js"></script>
+    <script src="../JS/WorkingPanel/redirecionarSemQuadro.js"></script>
+    <script src="../JS/WorkingPanel/criarUmaLista.js"></script>
+    <script src="../JS/WorkingPanel/carregarListas.js"></script>
+    <script src="../JS/WorkingPanel/gerenciamentoDeQuadros.js"></script>
+    <script src="../JS/WorkingPanel/janelas.js"></script>
+    <script src="../JS/WorkingPanel/carregarMenuLateral.js"></script>
+    <script src="../JS/WorkingPanel/menuDaLista.js"></script>
+    <script src="../JS/WorkingPanel/definirFoco.js"></script>
 </body>
-<script src="../JS/ListsAndCards.js"></script>
 </html>

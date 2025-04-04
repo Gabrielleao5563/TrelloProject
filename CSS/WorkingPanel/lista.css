@@ -1,0 +1,48 @@
+/* Estilização padrão de uma lista carregada */
+.List {
+    background-color: var(--Preto);
+    min-height: 10vh;
+    width: 15vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+    cursor: pointer;
+    padding-bottom: 2vh;
+}
+.ListNameText {
+    color: var(--CorDoTexto);
+    width: 70%;
+    margin-left: 5%;
+    font-family: var(--FontePadrao);
+    font-weight: bold;
+    font-size: 2vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 70%;
+}
+
+/* Botão de 3 pontos da lista */
+.FixedListTreePointBTN {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 10%;
+    border-radius: 50%;
+    background-color: var(--Cinza);
+    transition-duration: 0.3s;
+}
+.FixedListTreePointBTN:hover {
+    background-color: var(--CinzaClarinho);
+}
+.FixedListTreePointBTN > img {
+    width: 100%;
+}

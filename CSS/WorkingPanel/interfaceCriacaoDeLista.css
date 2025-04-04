@@ -1,0 +1,70 @@
+/* Janela de criação de lista */
+.ListCreationTab {
+    background-color: var(--PretoComOpacidade);
+    min-height: 10vh;
+    width: 15vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    border-radius: 20px;
+    position: relative;
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+    cursor: default;
+    padding-bottom: 2vh;
+    border: solid 0.2vw var(--Preto);
+}
+.ListCreationTabTitle {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-family: var(--FontePadrao);
+    color: var(--CorDoTexto);
+    font-size: 1.8vh;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+/* Input presente na janela de criação da lista */
+.ListCreationTabInputHolder {
+    width: 90%;
+    margin: auto;
+    margin-top: 2vh;
+}
+.ListCreationTabInputHolder > input {
+    width: 100%;
+    line-height: 3vh;
+    background-color: var(--Preto);
+    color: var(--CorDoTexto);
+    text-align: left;
+    text-indent: 1vw;
+    cursor: text;
+    border-radius: 20px;
+}
+
+/* Opções da criação de lista no fim da janela */
+.ListCreationTabFlexMenu {
+    width: 90%;
+    margin: auto;
+    min-height: 4vh;
+    margin-top: 1vh;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.ListCreationTabOption {
+    width: 49%;
+    height: 4vh;
+    border-radius: 20px;
+    background-color: var(--CInzaClaro);
+    cursor: pointer;
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

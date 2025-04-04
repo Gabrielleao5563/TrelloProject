@@ -1,0 +1,21 @@
+/* Estilização do menu secundario relacionado ao quadro */
+.BoardRelatedMenuDiv {
+    height: 5vh;
+    width: 99vw;
+    position: absolute;
+    top: 5vh;
+    left: 1vw;
+    transition-duration: 0.5s;
+    background-color: var(--Cinza);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+.RelatedMenuBoardName {
+    color: var(--CorDoTexto);
+    font-size: 3vh;
+    font-family: var(--FontePadrao);
+    font-weight: bold;
+    margin-left: 1vw;
+}

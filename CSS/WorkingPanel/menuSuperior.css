@@ -1,0 +1,45 @@
+/* Barra preta do topo do menu */
+nav.TopMenuBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 5vh;
+    background-color: var(--Preto);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 9;
+}
+
+/* Nome TRELLO no menu em cima */
+p.TopMenuTrelloName {
+    color: var(--CorDoTexto);
+    font-family: var(--FontePadrao);
+    font-weight: bolder;
+    font-size: 3vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+p.TopMenuTrelloName:hover {
+    color: var(--CorDoTextoHover);
+}
+
+/* Opções na barra preta do topo no menu */
+p.TopMenuOption {
+    color: var(--CorDoTexto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 2vh;
+    cursor: pointer;
+    padding: 1vh;
+    transition-duration: 0.2;
+}
+p.TopMenuOption:hover {
+    color: var(--CorDoTextoHover);
+    background-color: var(--Cinza);
+}

@@ -1,0 +1,28 @@
+/* Configuração da Paleta de cores e familia de fonte */
+:root {
+    --Preto: #101204;
+    --PretoComOpacidade: #10120488;
+    --Cinza: #22272B;
+    --CInzaClaro: #373f46;
+    --CinzaClarinho: #9EACBA;
+    --CorDoTexto: white;
+    --CorDoTextoHover: rgb(228, 228, 228);
+    --FontePadrao: Arial;
+}
+
+/* Paleta de Cores das Etiquetas */
+.orange {
+    background-color: orange;
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.cyan {
+    background-color: cyan;
+}
+.black {
+    background-color: black;
+}

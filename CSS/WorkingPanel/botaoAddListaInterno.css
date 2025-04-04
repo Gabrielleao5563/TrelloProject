@@ -1,0 +1,47 @@
+/* Div com o botao de adicionar lista ao final de todas as listas existentes */
+.AfterListsDivBTN {
+    margin-top: 2vh;
+    margin-left: 1vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1vh;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgba(255, 255, 255, 0.1) 2px 2px 40px;
+    transition-duration: 0.5s;
+}
+.AfterListsDivBTN:hover {
+    background-color: var(--CinzaClarinho);
+}
+.AfterListsDivBTN:hover > .BoardAddListButton > .AddListButtonText > p {
+    color: var(--Preto);
+}
+
+/* Estilização do botão de adicionar lista ao final das listas carregadas */
+.BoardAddListButton {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 15vw;
+    max-height: 8vh;
+}
+.AddListButtonText {
+    width: 55%;
+}
+.AddListButtonIcon {
+    position: relative;
+    width: 10%;
+}
+.AddListButtonText > p {
+    color: var(--CorDoTexto);
+    font-family: var(--FontePadrao);
+    font-size: 2vh;
+    font-weight: bold;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+.AddListButtonIcon > img {
+    width: 100%;
+}

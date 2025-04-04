@@ -1,0 +1,59 @@
+/* Estilização padrão de um cartão */
+.Card {
+    background-color: var(--CInzaClaro);
+    position: relative;
+    width: 90%;
+    min-height: 5vh;
+    margin: auto;
+    margin-bottom: 1vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 1vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* Estilização de imagens dentro de um cartão */
+.CardImage {
+    position: relative;
+    width: 100%;
+}
+.CardImage > img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Estilização das etiquetas e seus textos dentro de um cartão */
+.Label {
+    min-width: 20%;
+    max-width: 90%;
+    min-height: 5%;
+    border-radius: 10px;
+    margin-top: 3%;
+    margin-left: 3%;
+    padding: 2% 3% 2% 3%;
+    overflow: hidden;
+}
+.Label:hover {
+    opacity: 80%;
+}
+.LabelText {
+    color: var(--CorDoTexto);
+    font-weight: normal;
+    font-family: var(--FontePadrao);
+    text-align: center;
+}
+
+/* Estilização do nome do cartão */
+.CardName {
+    color: var(--CorDoTexto);
+    font-family: var(--FontePadrao);
+    font-weight: normal;
+    width: 90%;
+    margin-top: 1vh;
+    margin-left: 3%;
+    overflow: hidden;
+}

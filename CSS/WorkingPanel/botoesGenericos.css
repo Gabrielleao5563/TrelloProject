@@ -1,0 +1,20 @@
+/* Animações e estilos reutilizáveis */
+.AcceptOption:hover {
+    background-color: rgba(2, 197, 2, 0.2);
+}
+.RejectOption:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.AcceptOptionText {
+    color: white;
+    font-family: var(--FontePadrao);
+    font-weight: normal;
+    text-align: center;
+}
+.RejectOptionText {
+    color: white;
+    font-family: var(--FontePadrao);
+    font-weight: normal;
+    text-align: center;
+}

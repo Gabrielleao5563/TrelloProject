@@ -1,0 +1,15 @@
+/* Exibe as bordas imaginarias do elemento */
+.showborder {
+    box-sizing: border-box;
+    border: solid cyan 2px;
+}
+
+/* Torna o elemento invisível */
+.Hide {
+    display: none;
+}
+
+/* Estado temporario aplicado a itens enquanto são arrastados */
+.UnderDrag {
+    transform: rotate(-5deg);
+}

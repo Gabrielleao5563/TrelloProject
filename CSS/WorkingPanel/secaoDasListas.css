@@ -1,0 +1,23 @@
+/* Div que mantem todo o conteúdo principal exibido */
+.MainDivListsHolder {
+    width: 99vw;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: 1vw;
+    transition-duration: 0.5s;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+/* Div dinamica que mantem as listas existentes carregadas */
+.ListsSeparation {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
