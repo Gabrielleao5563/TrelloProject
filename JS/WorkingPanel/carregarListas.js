@@ -27,7 +27,7 @@ function carregarlistas(){
             <!--Lista "${lista.name}"-->
             <div Class="List" id="List${lista.id}">
 
-                <p Class="ListNameText" id="NomeLista${lista.id}" onclick="renomearLista(${lista.id})">${lista.name}</p>
+                <p Class="ListNameText" id="nomeLista${lista.id}" onclick="renomearLista('${lista.name}', ${lista.id})">${lista.name}</p>
 
                 <!-- Botão da lista -->
                 <div onclick="abrirmenuflutuantedalista(${lista.id}, event)" class="FixedListTreePointBTN">

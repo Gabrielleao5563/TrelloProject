@@ -1,6 +1,6 @@
 /* Menu rolante lateral */
 .SideMenuDiv {
-    background-color: var(--Preto);
+    background-color: var(--pretoEscurecido);
     position: absolute;
     top: 5vh;
     left: -14vw;
@@ -23,8 +23,8 @@
 /* Título no menu rolante lateral */
 .SideMenuTopTitle {
     margin-top: 5vh;
-    color: var(--CorDoTexto);
-    font-family: var(--FontePadrao);
+    color: var(--textoCinza);
+    font-family: var(--fontePadrao);
     font-size: 3vh;
     text-align: center;
 }
@@ -37,8 +37,8 @@
 
 /* Opções presentes no menu lateral */
 .SideMenuOption {
-    color: var(--CorDoTexto);
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--textoCinza);
+    font-family: var(--fontePadrao);
     font-weight: normal;
     font-size: 2vh;
 }
@@ -54,10 +54,10 @@
     cursor: pointer;
 }
 .SideMenuOptionContentHolder:hover {
-    background-color: var(--Cinza);
+    background-color: var(--cinzaMedio);
 }
 .quadroselecionado {
-    background-color: var(--CInzaClaro);
+    background-color: var(--cinzaClaro);
 }
 
 /* Div que contem a imagem icone da opção no menu lateral */
@@ -78,8 +78,8 @@
 
 /* Texto título da seção 2 no menu lateral */
 .SideMenuSection2PresentingText {
-    color: var(--CorDoTexto);
-    font-family: var(--FontePadrao);
+    color: var(--textoCinza);
+    font-family: var(--fontePadrao);
     font-weight: bold;
     text-align: center;
     margin-top: 5vh;

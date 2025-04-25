@@ -3,9 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EM DESENVOLVIMENTO</title>
-    <link rel="stylesheet" href="../CSS/WorkingPanel/resetPadrao.css">
-    <link rel="stylesheet" href="../CSS/WorkingPanel/variaveis.css">
-    <link rel="stylesheet" href="../CSS/WorkingPanel/classesGerais.css">
+
+    <!-- Dispositivos em geral -->
+    <link rel="stylesheet" href="../CSS/GERAL/resetPadrao.css">
+    <link rel="stylesheet" href="../CSS/GERAL/variaveis.css">
+    <link rel="stylesheet" href="../CSS/GERAL/classesGerais.css">
     <link rel="stylesheet" href="../CSS/WorkingPanel/botoesGenericos.css">
     <link rel="stylesheet" href="../CSS/WorkingPanel/divPrincipal.css">
     <link rel="stylesheet" href="../CSS/WorkingPanel/menuSuperior.css">
@@ -18,7 +20,11 @@
     <link rel="stylesheet" href="../CSS/WorkingPanel/secaoAposAsListas.css">
     <link rel="stylesheet" href="../CSS/WorkingPanel/interfaceCriacaoDeLista.css">
     <link rel="stylesheet" href="../CSS/WorkingPanel/botaoAddListaInterno.css">
-    <link rel="stylesheet" href="../CSS/WorkingPanel/inputRenomearListaExterno.css">
+
+    <!-- Tablets -->
+    <link rel="stylesheet" href="../CSS/WorkingPanel/Tablets/tablet-menuLateral.css">
+
+    <!-- Celulares -->
 </head>
 <body>
 
@@ -70,11 +76,11 @@
                     <div class="SideMenuOptionContentHolder">
                         <!--Icone-->
                         <div class="SideMenuOptionContentHolderImage">
-                            <img style="width: 80%;" src="../ICONS/MyBoardsIcon.png" alt="IconeQuadroTeste">
+                            <img style="width: 80%;" src="../ICONS/MyBoardsIcon.png" alt="IconeQuadroExemplo">
                         </div>
                         <!--Texto-->
                         <div class="SideMenuOptionContentHolderText">
-                            <p class="SideMenuOption">Quadro Teste</p>
+                            <p class="SideMenuOption">Quadro Exemplo</p>
                         </div>
                     </div>
                 </li>
@@ -83,10 +89,30 @@
         </div>
         <!-- Menu do Quadro -->
         <div class="BoardRelatedMenuDiv">
-            <!-- Opções do Menu -->
-            <ul>
-                <li><p class="RelatedMenuBoardName">NOME DO QUADRO</p></li>
-            </ul>
+
+            <!--Seção 1-->
+            <div class="BoardRelatedMenuSection1 mostrarBordas">
+
+                <!--Nome do Quadro atual-->
+                <p class="RelatedMenuBoardName">Nome do Quadro</p>
+
+                <!--Botão Favoritar-->
+                <div class="mostrarBordas">
+
+                </div>
+
+                <!--Botão quadros favoritos-->
+                <div class="mostrarBordas">
+                    <p>Favoritos</p>
+                </div>
+
+            </div>
+
+            <!--Seção 2-->
+            <div class="BoardRelatedMenuSection2 mostrarBordas">
+
+            </div>
+
         </div>
         <!-- Div principal com as listas -->
         <div class="MainDivListsHolder">
@@ -98,7 +124,7 @@
                 <div class="List">
 
                     <!-- Nome da lista -->
-                    <p class="ListNameText" id="NomeLista1" onclick="renomearLista('NomeLista1')">Lista de exemplo</p>
+                    <p class="ListNameText" id="nomeLista1" onclick="renomearLista('Lista de exemplo', '1')">Lista de exemplo</p>
 
                     <!--Input de Renomeação-->
                     <input class="ListExternalRenamingInput" type="text" id="inputNomeLista1">
@@ -157,15 +183,23 @@
         </div>
 
     </main>
-    <script src="../JS/WorkingPanel/verificarJson.js"></script>
-    <script src="../JS/WorkingPanel/aoCarregar.js"></script>
+    
+    <script src="../JS/GERAL/verificarJson.js"></script>
+    <script src="../JS/GERAL/definirFoco.js"></script>
+    <script src="../JS/GERAL/janelas.js"></script>
+    <script src="../JS/GERAL/definirQuadroAtual.js"></script>
+
     <script src="../JS/WorkingPanel/redirecionarSemQuadro.js"></script>
-    <script src="../JS/WorkingPanel/criarUmaLista.js"></script>
+
+    <scrit src="../JS/WorkingPanel/aoCarregar.js"></script>
     <script src="../JS/WorkingPanel/carregarListas.js"></script>
-    <script src="../JS/WorkingPanel/gerenciamentoDeQuadros.js"></script>
-    <script src="../JS/WorkingPanel/janelas.js"></script>
     <script src="../JS/WorkingPanel/carregarMenuLateral.js"></script>
+
+    <script src="../JS/WorkingPanel/criarUmaLista.js"></script>
+
     <script src="../JS/WorkingPanel/menuDaLista.js"></script>
-    <script src="../JS/WorkingPanel/definirFoco.js"></script>
+    <script src="../JS/WorkingPanel/renomearLista.js"></script>
+
+    <script src="../JS/WorkingPanel/gerenciamentoDeQuadros.js"></script>
 </body>
 </html>

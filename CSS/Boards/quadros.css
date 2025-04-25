@@ -1,0 +1,27 @@
+/* Estilo da caixa do quadro */
+.BoardDiv {
+    width: 20vw;
+    height: 15vh;
+    border-radius: 20px;
+    border: solid 0.2vw var(--Preto);
+    position: relative;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+/* Nome dentro da caixa do quadro */
+.BoardName {
+    color: white;
+    font-family: var(--FontePadrao);
+    font-weight: bold;
+    font-size: 1.1vw;
+    background-color: var(--PretoComOpacidade);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}

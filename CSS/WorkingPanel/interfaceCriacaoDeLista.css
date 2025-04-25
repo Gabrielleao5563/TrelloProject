@@ -1,6 +1,6 @@
 /* Janela de criação de lista */
 .ListCreationTab {
-    background-color: var(--PretoComOpacidade);
+    background-color: var(--pretoPadrao40pct);
     min-height: 10vh;
     width: 15vw;
     margin-top: 2vh;
@@ -14,14 +14,14 @@
     overflow: hidden;
     cursor: default;
     padding-bottom: 2vh;
-    border: solid 0.2vw var(--Preto);
+    border: solid 0.2vw var(--pretoPadrao);
 }
 .ListCreationTabTitle {
     width: 90%;
     margin: auto;
     text-align: center;
-    font-family: var(--FontePadrao);
-    color: var(--CorDoTexto);
+    font-family: var(--fontePadrao);
+    color: var(--textoBranco);
     font-size: 1.8vh;
     font-weight: bold;
     margin-top: 2vh;
@@ -36,8 +36,8 @@
 .ListCreationTabInputHolder > input {
     width: 100%;
     line-height: 3vh;
-    background-color: var(--Preto);
-    color: var(--CorDoTexto);
+    background-color: var(--pretoPadrao);
+    color: var(--textoBranco);
     text-align: left;
     text-indent: 1vw;
     cursor: text;
@@ -61,7 +61,7 @@
     width: 49%;
     height: 4vh;
     border-radius: 20px;
-    background-color: var(--CInzaClaro);
+    background-color: var(--cinzaMedio);
     cursor: pointer;
     transition-duration: 0.2s;
     display: flex;

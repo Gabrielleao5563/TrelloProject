@@ -1,6 +1,6 @@
 /* Estilização padrão de uma lista carregada */
 .List {
-    background-color: var(--Preto);
+    background-color: var(--pretoForte);
     min-height: 10vh;
     width: 15vw;
     margin-top: 2vh;
@@ -16,10 +16,10 @@
     padding-bottom: 2vh;
 }
 .ListNameText {
-    color: var(--CorDoTexto);
+    color: var(--textoCinza);
     width: 70%;
     margin-left: 5%;
-    font-family: var(--FontePadrao);
+    font-family: var(--fontePadrao);
     font-weight: bold;
     font-size: 2vh;
     margin-top: 5%;
@@ -37,12 +37,26 @@
     top: 10%;
     width: 10%;
     border-radius: 50%;
-    background-color: var(--Cinza);
+    background-color: var(--pretoEscurecido);
     transition-duration: 0.3s;
 }
 .FixedListTreePointBTN:hover {
-    background-color: var(--CinzaClarinho);
+    background-color: var(--pretoPadrao);
 }
 .FixedListTreePointBTN > img {
     width: 100%;
+}
+
+/* Input de renomeação da lista */
+.ListExternalRenamingInput {
+    position: absolute;
+    display: none;
+    top: 10%;
+    left: 5%;
+    width: 70%;
+    border-radius: 10px;
+    color: var(--CorDoTexto);
+    background-color: var(--Preto);
+    border: solid 1px var(--CorDoTexto);
+    line-height: 200%;
 }

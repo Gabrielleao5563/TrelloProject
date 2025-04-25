@@ -10,10 +10,10 @@
     transition-duration: 0.5s;
 }
 .AfterListsDivBTN:hover {
-    background-color: var(--CinzaClarinho);
+    background-color: var(--cinzaClaro);
 }
 .AfterListsDivBTN:hover > .BoardAddListButton > .AddListButtonText > p {
-    color: var(--Preto);
+    color: var(--textoBranco);
 }
 
 /* Estilização do botão de adicionar lista ao final das listas carregadas */
@@ -35,8 +35,8 @@
     width: 10%;
 }
 .AddListButtonText > p {
-    color: var(--CorDoTexto);
-    font-family: var(--FontePadrao);
+    color: var(--textoCinza);
+    font-family: var(--fontePadrao);
     font-size: 2vh;
     font-weight: bold;
     text-align: center;

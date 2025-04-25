@@ -1,0 +1,17 @@
+/* Botão de criar novo quadro */
+.fixedbtncreateboard {
+    color: white;
+    font-weight: bold;
+    font-family: var(--FontePadrao);
+    position: absolute;
+    top: 15%;
+    border: solid 1px white;
+    padding: 1%;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+.fixedbtncreateboard:hover {
+    background-color: var(--CinzaClarinho);
+    color: black;
+}

@@ -1,5 +1,5 @@
 /* Exibe as bordas imaginarias do elemento */
-.showborder {
+.mostrarBordas {
     box-sizing: border-box;
     border: solid cyan 2px;
 }

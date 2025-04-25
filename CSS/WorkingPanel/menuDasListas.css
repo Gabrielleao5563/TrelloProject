@@ -1,8 +1,8 @@
 /* Menu flutuante das listas */
 .ListMenu {
     position: absolute;
-    background-color: var(--Cinza);
-    border: solid gray 1px;
+    background-color: var(--cinzaMedio);
+    border: solid var(--cinzaClaro) 1px;
     border-radius: 10px;
     padding: 5px;
     display: none;
@@ -23,9 +23,9 @@
     padding: 8px 12px;
     cursor: pointer;
     color: white;
-    font-family: var(--FontePadrao);
+    font-family: var(--fontePadrao);
     transition-duration: 0.3s;
 }
 .ListMenu li:hover {
-    background-color: var(--CInzaClaro);
+    background-color: var(--cinzaClaro);
 }

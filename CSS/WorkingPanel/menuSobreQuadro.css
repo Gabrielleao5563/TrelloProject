@@ -6,16 +6,39 @@
     top: 5vh;
     left: 1vw;
     transition-duration: 0.5s;
-    background-color: var(--Cinza);
+    background-color: var(--pretoPadrao40pct);
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+
+/* Seção 1 */
+.BoardRelatedMenuSection1 {
+    margin-left: 0%;
+    height: 70%;
+    width: 50%;
+    position: relative;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: left;
 }
+
+/* Seção 2 */
+.BoardRelatedMenuSection2 {
+    margin-right: 5%;
+    height: 70%;
+    width: 30%;
+    position: relative;
+}
+
+/* Nome do quadro atual no menu */
 .RelatedMenuBoardName {
-    color: var(--CorDoTexto);
-    font-size: 3vh;
-    font-family: var(--FontePadrao);
+    color: var(--textoBranco);
+    font-size: 2vh;
+    font-family: var(--fontePadrao);
     font-weight: bold;
     margin-left: 1vw;
 }
