@@ -1,20 +1,16 @@
 //Função responsável por carregar os quadros existentes na tela
 function carregarquadros(){
 
-    //Acessa a div que contem os quadros
-    var div = document.getElementById("BoardsContainer");
+    var div = document.getElementById("BoardsContainer"); //Acessa a div que contem os quadros
+    
+    var conteudotemporario=""; //variavel que segura conteúdo temporariamente durante execução
 
-    //variavel que segura conteúdo temporariamente durante execução
-    var conteudotemporario="";
+    div.innerHTML=""; //Limpa o conteudo inicial
 
-    //Limpa o conteúdo inicial
-    div.innerHTML="";
-
-    //Acessa o JSON e pega os dados
-    let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello"));
+    let dadosdotrello = consultarData("dadosdotrello"); //Consulta os dados
 
     //Se não for encontrado nenhum quadro existente
-    if(dadosdotrello.quadros.lenght === 0){
+    if(dadosdotrello.quadros == ""){
 
         //Exibe dentro da página a mensagem
         div.innerHTML="<p class='genericerrortext'>Ops, não há nenhum quadro criado. Que tal criar um?</p>"
@@ -23,6 +19,7 @@ function carregarquadros(){
         return;
 
     }
+
 
     //Executa a tudo a partir daqui uma vez para cada quadro existente
     dadosdotrello.quadros.forEach(quadro => {
@@ -39,5 +36,4 @@ function carregarquadros(){
         div.innerHTML=div.innerHTML+conteudotemporario;
 
     })
-
 }

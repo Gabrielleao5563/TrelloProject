@@ -55,8 +55,9 @@
     left: 5%;
     width: 70%;
     border-radius: 10px;
-    color: var(--CorDoTexto);
-    background-color: var(--Preto);
-    border: solid 1px var(--CorDoTexto);
+    color: var(--textoBranco);
+    text-indent: 5%;
+    background-color: var(--pretoPadrao);
+    border: solid 1px var(--textoCinza);
     line-height: 200%;
 }

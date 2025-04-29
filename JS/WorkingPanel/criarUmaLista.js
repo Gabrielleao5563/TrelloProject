@@ -17,26 +17,19 @@ function comecarcriacaodalista(){
 
     //Caso não tenha quadro ativo
     if(!quadroid){
-
-        //Encerrar criação da lista
-        return;
+        
+        return; //Encerrar criação da lista
 
     }
+    
+    let listasdessequadro = consultarData("dadosdotrello").listas.filter(lista => lista.boardid === quadroid); //Filtra apenas as listas referentes a esse quadro
 
-    //Filtra apenas as listas referentes a esse quadro
-    let listasdessequadro = dadosdotrello.listas.filter(lista => lista.boardid === quadroid);
+    var posicao = listasdessequadro.length + 1; //Decide a posição ideal para a lista
+    
+    criarumalista(quadroid, listanome, posicao); //Chama a função para salvar
 
-    //Decide a posição ideal para a lista
-    var posicao = listasdessequadro.length + 1;
-
-    //Chama a função para salvar
-    criarumalista(quadroid, listanome, posicao);
-
-    //Pega acesso ao input
-    var nomeinput = document.getElementById("ListCreationTabInput");
-
-    //Limpa o campo de digitação após criar
-    nomeinput.value="";
+    var nomeinput = document.getElementById("ListCreationTabInput"); //Pega acesso ao input
+    nomeinput.value=""; //Limpa o campo de digitação após criar
 
     fecharjanela('ListCreationTab');
 
@@ -45,8 +38,7 @@ function comecarcriacaodalista(){
 //Funcao responsável por criar uma nova lista
 function criarumalista(boardid, name, position){
 
-    //Pega todos os dados já salvos no cache do site sobre as listas e cartoes
-    let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello"));
+    let dadosdotrello = consultarData("dadosdotrello"); //Pega todos os dados já salvos no cache do site sobre as listas e cartoes
 
     //Criação de uma nova lista
     let novalista = {
@@ -57,13 +49,7 @@ function criarumalista(boardid, name, position){
         cardcount: 0 //Consta quantos cartões estão salvos dentro desta lista
     }
 
-    //Insere estes dados dentro da seção listas no arquivo JSON temporario
-    dadosdotrello.listas.push(novalista);
+    salvarData("dadosdotrello", "lista", novalista); //Chama a função que vai salvar os dados
 
-    //Passa os dados para o JSON permanente
-    localStorage.setItem("dadosdotrello", JSON.stringify(dadosdotrello));
-    console.log("Lista adicionada: " + novalista);
-
-    //Recarrega as listas existentes
-    carregarlistas();
+    carregarlistas(); //Recarrega as listas existentes
 }

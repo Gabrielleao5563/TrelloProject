@@ -1,8 +1,8 @@
 //Funcao responsavel por carregar todas as listas existentes
 function carregarlistas(){
 
-    let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello")); //Coleta as informações das listas
-    let quadroemuso = consultarquadroatual(); //Acessa a informação de qual quadro está em uso
+    let dadosdotrello = consultarData("dadosdotrello"); //Consulta os dados
+    let quadroemuso = consultarquadroatual(); //Consulta qual quadro está em uso
 
     //Caso não exista quadro aberto
     if(!quadroemuso) {
@@ -25,9 +25,13 @@ function carregarlistas(){
         //Cria o bloco de conteúdo personalizando as informações com base no arquivo JSON
         conteudotemporario = `
             <!--Lista "${lista.name}"-->
-            <div Class="List" id="List${lista.id}">
+            <div Class="List" id="List${lista.id}" draggable="true">
 
+                <!--Nome da lista-->
                 <p Class="ListNameText" id="nomeLista${lista.id}" onclick="renomearLista('${lista.name}', ${lista.id})">${lista.name}</p>
+
+                <!--Input de renomeação-->
+                <input class="ListExternalRenamingInput" type="text" id="inputNomeLista${lista.id}">
 
                 <!-- Botão da lista -->
                 <div onclick="abrirmenuflutuantedalista(${lista.id}, event)" class="FixedListTreePointBTN">

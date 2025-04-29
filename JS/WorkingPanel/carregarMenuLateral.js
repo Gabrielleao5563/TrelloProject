@@ -11,7 +11,7 @@ function carregarquadrosmenulateral(){
     div.innerHTML="";
 
     //Acessa o JSON e pega os dados
-    let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello"));
+    let dadosdotrello = consultarData("dadosdotrello");
 
     //Executa a tudo a partir daqui uma vez para cada quadro existente
     dadosdotrello.quadros.forEach(quadro => {
@@ -33,6 +33,7 @@ function carregarquadrosmenulateral(){
             </ul>
         `
 
+        //Função que destaca a cor do quadro selecionado na lista
         function verificarselecionado(){
 
             if(consultarquadroatual() === quadro.id){

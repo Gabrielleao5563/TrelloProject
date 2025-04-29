@@ -15,10 +15,6 @@ function verificarjson(){
         localStorage.setItem("dadosdotrello", JSON.stringify(datapadrao));
         console.log("Arquivo JSON criado");
     }else{
-        //Caso arquivo já existir, nao fazer nada
-        console.log("Arquivo JSON já existe");
+        return;
     }
 }
-
-let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello")); //Puxa os dados atuais do arquivo JSON e insere para ser usado no código
-console.log("Dados encontrados no arquivo JSON ao carregar: " + dadosdotrello); //Registra o que foi encontrado no arquivo JSON para o console

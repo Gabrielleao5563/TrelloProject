@@ -20,8 +20,7 @@ function trocarquadro(boardid){
     //Salva o novo quadro como o atualmente em uso
     definirquadroatual(boardid);
 
-    carregarlistas();
-
-    carregarquadrosmenulateral();
+    //Altera o endereço na location bar
+    window.location.href = "WorkingPanel.html?quadro=" + boardid
 
 }

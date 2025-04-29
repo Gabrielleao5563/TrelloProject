@@ -10,27 +10,20 @@ function janeladecriacaodequadro(decision){
 function iniciarcriacaodoquadro(){
 
     //Acessa caixas de erro
-    var caixaerro1 = document.getElementById("boardcreationtaberror1");
-    var caixaerro2 = document.getElementById("boardcreationtaberror2");
+    var caixaerro1 = document.getElementById("boardcreationtaberror1"); var caixaerro2 = document.getElementById("boardcreationtaberror2");
 
     //Acessa os textos das caixas de erro
-    var erro1 = document.getElementById("boardcreationtaberror1text");
-    var erro2 = document.getElementById("boardcreationtaberror2text");
+    var erro1 = document.getElementById("boardcreationtaberror1text"); var erro2 = document.getElementById("boardcreationtaberror2text");
 
     //Reseta caixas de erro antes de iniciar o processo de verificação
-    caixaerro1.style.display="none";
-    caixaerro2.style.display="none";
+    caixaerro1.style.display="none"; caixaerro2.style.display="none";
 
     //Acessa os campos de digitação e pega as informações digitadas
-    var nomedigitado = document.getElementById("boardcreationinput1");
-    var corinserida = document.getElementById("boardcreationinput2");
-
-    //---------- VERIFICAÇÔES ---------- VERIFICAÇÔES ---------- VERIFICAÇÔES ---------- VERIFICAÇÔES ---------- VERIFICAÇÔES ---------- VERIFICAÇÔES ---------- VERIFICAÇÔES
+    var nomedigitado = document.getElementById("boardcreationinput1"); var corinserida = document.getElementById("boardcreationinput2");
 
     //Se não houver nome digitado
     if(nomedigitado.value == ""){
 
-        //Mostrar o seguinte erro
         erro1.innerHTML="Nenhum nome foi digitado para a lista!";
         caixaerro1.style.display="flex";
 
@@ -41,7 +34,6 @@ function iniciarcriacaodoquadro(){
     //Se não houver cor inserida/digitada
     if(corinserida.value == ""){
 
-        //Mostrar o seguinte erro
         erro2.innerHTML="Nenhuma cor foi inserida para o plano de fundo!";
         caixaerro2.style.display="flex";
 
@@ -52,7 +44,6 @@ function iniciarcriacaodoquadro(){
     //Verifica se a cor inserida é valida
     if(!corvalida(corinserida.value)){
 
-        //Exibir mensagem de erro
         erro2.innerHTML="Somente é aceito no formato inglês, hexadecimal ou rgb!";
         caixaerro2.style.display = "flex";
 
@@ -72,8 +63,6 @@ function iniciarcriacaodoquadro(){
 //Função responsável por criar um novo quadro
 function criarumquadro(name, background){
 
-    let dadosdotrello = JSON.parse(localStorage.getItem("dadosdotrello")); //Puxa os dados do arquivo JSON
-
     //Assegura que um quadro com dados nulos não seja criado
     if(!name || !background){
 
@@ -92,13 +81,7 @@ function criarumquadro(name, background){
 
     }
 
-    console.log("Criando quadro: ", novoquadro.name, " Id: ", novoquadro.id, " Cor de fundo: ", novoquadro.background); //Registra no console
-
-    //Salva o novo quadro no arquivo JSON
-    dadosdotrello.quadros.push(novoquadro); 
-    localStorage.setItem("dadosdotrello", JSON.stringify(dadosdotrello));
-
-    //Recarrega os quadros após criar
-    carregarquadros();
+    salvarData("dadosdotrello", "quadro", novoquadro); //Salva os dados
+    carregarquadros(); //Recarrega os quadros após criar
 
 }
